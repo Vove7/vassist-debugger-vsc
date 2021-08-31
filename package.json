@@ -1,0 +1,84 @@
+{
+	"name": "vassist-debugger",
+	"displayName": "vassist-debugger",
+	"version": "2.0.1",
+	"publisher": "Vove",
+	"private": true,
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Vove7/vassist-debugger-vsc"
+	},
+	"engines": {
+		"vscode": "^1.32.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"icon": "icon.png",
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.connect",
+				"title": "Vassist Connect"
+			},
+			{
+				"command": "extension.closeConnect",
+				"title": "Vassist Disconnect"
+			},
+			{
+				"command": "extension.testRun",
+				"title": "Vassist Run"
+			},
+			{
+				"command": "extension.runCommand",
+				"title": "Vassist Run command"
+			},
+			{
+				"command": "extension.stopRun",
+				"title": "Vassist Stop"
+			},
+			{
+				"command": "extension.traversingView",
+				"title": "Vassist TraversingView"
+			}
+		],
+		"snippets": [
+			{
+				"language": "lua",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -watch -p ./",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test",
+		"publish": "vsce publish",
+		"package": "vsce package"
+	},
+	"devDependencies": {
+		"@types/bonjour": "^3.5.5",
+		"@types/mdns": "^0.0.33",
+		"@types/node": "^12.12.0",
+		"@types/vscode": "^1.32.0",
+		"@typescript-eslint/eslint-plugin": "^4.16.0",
+		"@typescript-eslint/parser": "^4.16.0",
+		"eslint": "^7.21.0",
+		"typescript": "^4.3.5",
+		"vsce": "^1.64.0"
+	},
+	"dependencies": {
+		"bonjour": "^3.5.0"
+	}
+}

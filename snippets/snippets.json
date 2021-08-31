@@ -1,0 +1,1140 @@
+{
+    "Print to console": {
+        "prefix": "argsss",
+        "body": [
+            "console.log('$1');",
+            "$2"
+        ],
+        "description": "Log output to console"
+    },
+    "用户参数": {
+        "prefix": "args",
+        "body": [
+            "args"
+        ],
+        "description": "用户参数"
+    },
+    "App context": {
+        "prefix": "app",
+        "body": [
+            "app"
+        ],
+        "description": "应用的Context"
+    },
+    "runtime": {
+        "prefix": "runtime",
+        "body": [
+            "runtime"
+        ],
+        "description": "运行时变量，可获取当前信息"
+    },
+    "执行器实例": {
+        "prefix": "executor",
+        "body": [
+            "executor"
+        ],
+        "description": "执行器实例"
+    },
+    "currentApp": {
+        "prefix": "currentApp",
+        "body": [
+            "currentApp"
+        ],
+        "description": "当前AppInfo"
+    },
+    "packageName": {
+        "prefix": "currentApp.packageName",
+        "body": [
+            "currentApp.packageName"
+        ],
+        "description": "当前App包名"
+    },
+    "currentActivity": {
+        "prefix": "runtime.currentActivity",
+        "body": [
+            "runtime.currentActivity"
+        ],
+        "description": "当前Activity"
+    },
+    "runtime.actionCount": {
+        "prefix": "runtime.actionCount",
+        "body": [
+            "runtime.actionCount"
+        ],
+        "description": "执行队列数量"
+    },
+    "runtime.currentActionIndex": {
+        "prefix": "runtime.currentActionIndex",
+        "body": [
+            "runtime.currentActionIndex"
+        ],
+        "description": "当前动作在队列中的索引"
+    },
+    "runtime.isGlobal": {
+        "prefix": "runtime.isGlobal",
+        "body": [
+            "runtime.isGlobal()"
+        ],
+        "description": "是否为全局操作"
+    },
+    "runtime.commandType": {
+        "prefix": "runtime.commandType",
+        "body": [
+            "runtime.commandType"
+        ],
+        "description": "命令类型 打开操作: 1; 关闭操作: -1 ;默认0"
+    },
+    "runtime.command": {
+        "prefix": "runtime.command",
+        "body": [
+            "runtime.command"
+        ],
+        "description": "语音命令文本"
+    },
+    "waitForVoiceParam": {
+        "prefix": "waitForVoiceParam",
+        "body": [
+            "waitForVoiceParam()"
+        ],
+        "description": "等待用户说话，并返回识别结果，识别失败返回空"
+    },
+    "speakSync": {
+        "prefix": "speakSync",
+        "body": [
+            "speakSync($1)"
+        ],
+        "description": "语音合成（同步） 参数:待合成text文本 返回是否成功"
+    },
+    "speak(text)": {
+        "prefix": "speak",
+        "body": [
+            "speak($1)"
+        ],
+        "description": "语音合成（异步）无返回值"
+    },
+    "checkService": {
+        "prefix": "checkService",
+        "body": [
+            "checkService()"
+        ],
+        "description": "返回无障碍是否开启"
+    },
+    "alert": {
+        "prefix": "alert",
+        "body": [
+            "alert($1, $2)"
+        ],
+        "description": "显示对话框，返回是否继续"
+    },
+    "singleChoiceDialog(title, items)": {
+        "prefix": "singleChoiceDialog",
+        "body": [
+            "singleChoiceDialog(${1:title}, ${2:items})"
+        ],
+        "description": "显示单选对话框，返回选择文本，若取消返回空"
+    },
+    "waitForApp": {
+        "prefix": "waitForApp",
+        "body": [
+            "waitForApp($1,$2)"
+        ],
+        "description": "waitForApp(pkg[,activity[,millis]]):Boolean\n等待应用出现\n参数 pkg: 应用包名， activity(可选) Activity名：如'MainActivity',\nmillis(可选)等待时长，不指定则无限等待\n返回：等待结果，true等待到，false：超时"
+    },
+    "tryClick": {
+        "prefix": "tryClick",
+        "body": [
+            "tryClick()"
+        ],
+        "description": "尝试点击\n当此节点点击失败，会尝试向上级容器尝试\n@return Boolean 是否成功"
+    },
+    "click": {
+        "prefix": "click",
+        "body": [
+            "click()"
+        ],
+        "description": "点击此Node\n失败率较高，使用起来不方便"
+    },
+    "swipe": {
+        "prefix": "swipe",
+        "body": [
+            "swipe($1,$2,$3)"
+        ],
+        "description": "以此Node中心滑动到dx,dy的地方\n需要Android 7.0+\nsetScreenSize() 对此有效\n@param dx Int x方向 移动距离 ±\n@param dy Int y ±\n@param delay Int 用时\n@return Boolean"
+    },
+    "tryLongClick": {
+        "prefix": "tryLongClick",
+        "body": [
+            "tryLongClick()"
+        ],
+        "description": "尝试长按，机制类似tryClick"
+    },
+    "longClick": {
+        "prefix": "longClick",
+        "body": [
+            "longClick()"
+        ],
+        "description": "长按操作"
+    },
+    "doubleClick": {
+        "prefix": "doubleClick",
+        "body": [
+            "doubleClick()"
+        ],
+        "description": "双击操作"
+    },
+    "setText": {
+        "prefix": "setText",
+        "body": [
+            "setText($1)"
+        ],
+        "description": "设置文本,一般只能用于可编辑控件\n@param text String\n@return Boolean"
+    },
+    "trySetText": {
+        "prefix": "trySetText($1)",
+        "body": [
+            "trySetText(text: String)"
+        ],
+        "description": "尝试设置文本内容，机制同tryClick\n@param text String\n@return Boolean 是否成功"
+    },
+    "getChilds": {
+        "prefix": "getChilds",
+        "body": [
+            "getChilds()"
+        ],
+        "description": "可用childs代替\n获取下级所有Node\n@return Array<ViewNode>\n示例 ： s=ViewFinder()....findFirst()\n       s.childs[0]  //获取s第一个子Node"
+    },
+    "childs": {
+        "prefix": "childs",
+        "body": [
+            "childs"
+        ],
+        "description": "获取下级所有Node\n@return Array<ViewNode>\n示例 ： s=ViewFinder()....findFirst()\n       s.childs[0]  //获取s第一个子Node"
+    },
+    "getParent": {
+        "prefix": "getParent",
+        "body": [
+            "getParent()"
+        ],
+        "description": "获取父级Node，可使用parent代替"
+    },
+    "parent": {
+        "prefix": "parent",
+        "body": [
+            "parent"
+        ],
+        "description": "获取父级Node"
+    },
+    "getBounds": {
+        "prefix": "getBounds",
+        "body": [
+            "getBounds()"
+        ],
+        "description": " 获取边界范围\n@return Rect(top,left,right,bottom)"
+    },
+    "getCenterPoint": {
+        "prefix": "getCenterPoint",
+        "body": [
+            "getCenterPoint()"
+        ],
+        "description": "获取中心点坐标(相对于本机屏幕)\n@return Point(x,y)?"
+    },
+    "getText": {
+        "prefix": "getText",
+        "body": [
+            "getText()"
+        ],
+        "description": "Node包含文本"
+    },
+    "select": {
+        "prefix": "select",
+        "body": [
+            "select()"
+        ],
+        "description": "选择操作"
+    },
+    "trySelect()": {
+        "prefix": "trySelect",
+        "body": [
+            "trySelect()"
+        ],
+        "description": "trySelect()"
+    },
+    "focus": {
+        "prefix": "focus",
+        "body": [
+            "focus()"
+        ],
+        "description": "尝试获取焦点"
+    },
+    "scrollUp": {
+        "prefix": "scrollUp",
+        "body": [
+            " scrollUp()"
+        ],
+        "description": "向上滚动大半屏幕"
+    },
+    "scrollDown": {
+        "prefix": "scrollDown",
+        "body": [
+            "scrollDown()"
+        ],
+        "description": "向下滚动大半屏幕"
+    },
+    "ViewFinder": {
+        "prefix": "ViewFinder",
+        "body": [
+            "ViewFinder()"
+        ],
+        "description": "视图节点查找器"
+    },
+    "VF id": {
+        "prefix": "id",
+        "body": [
+            "id($1)"
+        ],
+        "description": "指定id"
+    },
+    "matchesText": {
+        "prefix": "matchesText",
+        "body": [
+            "matchesText($1)"
+        ],
+        "description": "正则匹配文字\n此处正则 与其他地方相同 均以%匹配任意长度字符串 \n@param regs 表达式 %消息%\n@return ViewFinder"
+    },
+    "containsText": {
+        "prefix": "containsText",
+        "body": [
+            "containsText($1)"
+        ],
+        "description": "限定包含文本 不区分大小写\n可多个参数"
+    },
+    "equalsText": {
+        "prefix": "equalsText",
+        "body": [
+            "equalsText($1)"
+        ],
+        "description": "相同文本 不区分大小写\n可多个参数"
+    },
+    "similaryText": {
+        "prefix": "similaryText",
+        "body": [
+            "similaryText()"
+        ],
+        "description": "根据文本相似度 > 0.8 匹配 (转为拼音后的比较)例如 搜索QQ联系人时，使用首字母搜索，然后使用此方法模糊查找出现的联系人 参考QQ内指令选择聊天人\n可多个参数"
+    },
+    "desc": {
+        "prefix": "desc",
+        "body": [
+            "desc()"
+        ],
+        "description": "设置视图desc\n可多个参数"
+    },
+    "editable": {
+        "prefix": "editable",
+        "body": [
+            "editable()"
+        ],
+        "description": "限定ViewNode为可编辑"
+    },
+    "scrollable": {
+        "prefix": "scrollable",
+        "body": [
+            "scrollable()"
+        ],
+        "description": "限定ViewNode为可滚动"
+    },
+    "type": {
+        "prefix": "type",
+        "body": [
+            "type()"
+        ],
+        "description": "指定className  不区分大小写\n可多个参数"
+    },
+    "findFirst": {
+        "prefix": "findFirst",
+        "body": [
+            "findFirst()"
+        ],
+        "description": "立即搜索，直到找到第一个"
+    },
+    "find": {
+        "prefix": "find",
+        "body": [
+            "find()"
+        ],
+        "description": "//搜索所有符合条件,返回数组"
+    },
+    "await": {
+        "prefix": "await",
+        "body": [
+            "await($1)"
+        ],
+        "description": "等待毫秒"
+    },
+    "waitFor": {
+        "prefix": "waitFor",
+        "body": [
+            "waitFor($1)"
+        ],
+        "description": "等待指定毫秒"
+    },
+    "waitForId": {
+        "prefix": "waitForId",
+        "body": [
+            "waitForId($1)"
+        ],
+        "description": "waitForId(id [,millis]) :ViewNode?\n等待指定视图id的出现，millis等待时长\n返回：找到的ViewNode , 超时或无障碍未打开返回空"
+    },
+    "waitForDesc": {
+        "prefix": "waitForDesc",
+        "body": [
+            "waitForDesc($1)"
+        ],
+        "description": "waitForDesc(desc[,millis]):ViewNode?\n等待等待指定视图descd的出现，millis等待时长\n返回：找到的ViewNode , 超时或无障碍未打开返回空"
+    },
+    "waitForText": {
+        "prefix": "waitForText",
+        "body": [
+            "waitForText"
+        ],
+        "description": "waitForText(text[,millis]):ViewNode?\n等待文本为text的节点出现，millis等待时长\nrequire  'accessibility'\nv = waitForText({'主页','2'},5000) -- 等待5s 可多参数"
+    },
+    "smartOpen": {
+        "prefix": "smartOpen",
+        "body": [
+            "smartOpen($1)"
+        ],
+        "description": "可以打开应用包名，应用名，打开标记的记录，返回是否成功"
+    },
+    "smartClose": {
+        "prefix": "smartClose",
+        "body": [
+            "smartClose($1)"
+        ],
+        "description": "sleep(m)\n线程休眠m毫秒"
+    },
+    "toast": {
+        "prefix": "toast",
+        "body": [
+            "toast($1)"
+        ],
+        "description": "toast(msg: String)\n显通知"
+    },
+    "back": {
+        "prefix": "back",
+        "body": [
+            "back()"
+        ],
+        "description": "执行返回"
+    },
+    "home": {
+        "prefix": "home",
+        "body": [
+            "home()"
+        ],
+        "description": "返回主页"
+    },
+    "powerDialog": {
+        "prefix": "powerDialog",
+        "body": [
+            "powerDialog()"
+        ],
+        "description": "显示电源菜单"
+    },
+    "quickSettings": {
+        "prefix": "quickSettings",
+        "body": [
+            "quickSettings()"
+        ],
+        "description": "显示下拉通知栏quickSettings"
+    },
+    "recents": {
+        "prefix": "recents",
+        "body": [
+            "recents()"
+        ],
+        "description": "调出最近应用界面"
+    },
+    "notificationBar": {
+        "prefix": "notificationBar",
+        "body": [
+            "notificationBar()"
+        ],
+        "description": "显示通知栏(会收起，不完全展开，quickSettings可展开)"
+    },
+    "setScreenSize": {
+        "prefix": "setScreenSize",
+        "body": [
+            "setScreenSize($1,$2)"
+        ],
+        "description": "设置屏幕参考尺寸值，其他使用到屏幕坐标的都基于此尺寸，默认为本机屏幕实际尺寸。"
+    },
+    "global swipe": {
+        "prefix": "swipe",
+        "body": [
+            "swipe($1,$2,$3,$4,$5)"
+        ],
+        "description": "swipe(x1: Int, y1: Int, x2: Int, y2: Int, dur: Int)\n全局滑动手势，从[x1,y1] => [x2,y2] dur执行使用时间，毫秒 Android7.0+"
+    },
+    "global click": {
+        "prefix": "click",
+        "body": [
+            "click($1,$2)"
+        ],
+        "description": "全局 点击坐标[x,y]Android7.0+"
+    },
+    "global longClick": {
+        "prefix": "longClick",
+        "body": [
+            "longClick($1,$2)"
+        ],
+        "description": "longClick(x: Int, y: Int)\n长按[x,y]Android7.0+"
+    },
+    "gesture": {
+        "prefix": "gesture",
+        "body": [
+            "gesture($1,$2)"
+        ],
+        "description": "gesture(dur: Long, points: Array<Pair<Int, Int>>)\n根据坐标数组执行手势Android7.0+"
+    },
+    "screenShot": {
+        "prefix": "screenShot",
+        "body": [
+            "screenShot()"
+        ],
+        "description": "无障碍截屏"
+    },
+    "openAppDetail": {
+        "prefix": "openAppDetail",
+        "body": [
+            "openAppDetail($1)"
+        ],
+        "description": "openAppDetail(pkg: String): Boolean\n打开应用详情页"
+    },
+    "openAppByPkg": {
+        "prefix": "openAppByPkg",
+        "body": [
+            "openAppByPkg($1,$2)"
+        ],
+        "description": "openAppByPkg(pkg: String, resetTask: Boolean = false)\n通过包名打开App,resetTask可使app进入首页"
+    },
+    "openAppByWord": {
+        "prefix": "openAppByWord",
+        "body": [
+            "openAppByWord($1)"
+        ],
+        "description": "打开应用，通过通过App安装列表、标记数据匹配"
+    },
+    "call": {
+        "prefix": "call",
+        "body": [
+            "call($1)"
+        ],
+        "description": "拨打\n参数(s:String [,simId:Int]) s可为：手机号、本地联系人、标记联系人\n支持指定卡号simId：0:卡1  1:卡2"
+    },
+    "openFlashlight": {
+        "prefix": "openFlashlight",
+        "body": [
+            "openFlashlight()"
+        ],
+        "description": "open手电"
+    },
+    "closeFlashlight": {
+        "prefix": "closeFlashlight",
+        "body": [
+            "closeFlashlight()"
+        ],
+        "description": ""
+    },
+    "getDeviceInfo": {
+        "prefix": "getDeviceInfo",
+        "body": [
+            "getDeviceInfo()"
+        ],
+        "description": "获取手机信息DeviceInfo(public ScreenInfo(height,width,density) screenInfo;String manufacturerName;String productName;String brandName;String model;String boardName;String deviceName;String serial;int sdkInt;String androidVersion;String language)"
+    },
+    "getAppInfo": {
+        "prefix": "getAppInfo",
+        "body": [
+            "getAppInfo($1)"
+        ],
+        "description": "获取App信息 @param s 包名 或 App 名"
+    },
+    "openUrl": {
+        "prefix": "openUrl",
+        "body": [
+            "openUrl($1)"
+        ],
+        "description": "使用外部浏览器打开链接"
+    },
+    "mediaStart": {
+        "prefix": "mediaStart",
+        "body": [
+            "mediaStart()"
+        ],
+        "description": ""
+    },
+    "mediaResume": {
+        "prefix": "mediaResume",
+        "body": [
+            "mediaResume()"
+        ],
+        "description": "媒体继续"
+    },
+    "mediaStop": {
+        "prefix": "mediaStop",
+        "body": [
+            "mediaStop()"
+        ],
+        "description": "媒体停止"
+    },
+    "mediaNext": {
+        "prefix": "mediaNext",
+        "body": [
+            "mediaNext()"
+        ],
+        "description": "播放下一媒体"
+    },
+    "mediaPre": {
+        "prefix": "mediaPre",
+        "body": [
+            "mediaPre"
+        ],
+        "description": "播放上一媒体"
+    },
+    "volumeMute": {
+        "prefix": "volumeMute",
+        "body": [
+            "volumeMute()"
+        ],
+        "description": "设置静音模式(当前)"
+    },
+    "volumeUnmute": {
+        "prefix": "volumeUnmute",
+        "body": [
+            "volumeUnmute()"
+        ],
+        "description": "关闭静音模式"
+    },
+    "volumeUp": {
+        "prefix": "volumeUp",
+        "body": [
+            "volumeUp()"
+        ],
+        "description": "音量自增一格"
+    },
+    "volumeDown": {
+        "prefix": "volumeDown",
+        "body": [
+            "volumeDown()"
+        ],
+        "description": "音量自减一格"
+    },
+    "setMusicVolume": {
+        "prefix": "setMusicVolume",
+        "body": [
+            "setMusicVolume($1)"
+        ],
+        "description": "设置媒体音量"
+    },
+    "setAlarmVolume": {
+        "prefix": "setAlarmVolume",
+        "body": [
+            "setAlarmVolume()"
+        ],
+        "description": "设置闹钟音量"
+    },
+    "setNotificationVolume": {
+        "prefix": "setNotificationVolume",
+        "body": [
+            "setNotificationVolume()"
+        ],
+        "description": "设置通知音量"
+    },
+    "isMediaPlaying": {
+        "prefix": "isMediaPlaying",
+        "body": [
+            "isMediaPlaying()"
+        ],
+        "description": "媒体是否正在播放"
+    },
+    "musicMaxVolume": {
+        "prefix": "musicMaxVolume",
+        "body": [
+            "musicMaxVolume"
+        ],
+        "description": "媒体最大音量"
+    },
+    "musicCurrentVolume": {
+        "prefix": "musicCurrentVolume",
+        "body": [
+            "musicCurrentVolume"
+        ],
+        "description": "媒体当前音量"
+    },
+    "vibrate": {
+        "prefix": "vibrate",
+        "body": [
+            "vibrate($1)"
+        ],
+        "description": "vibrate(millis: Long)\n震动 millis时长\nvibrate(arr: Array<Long>)\n 指定数组震动"
+    },
+    "openBluetooth": {
+        "prefix": "openBluetooth",
+        "body": [
+            "openBluetooth()"
+        ],
+        "description": "打开蓝牙"
+    },
+    "closeBluetooth": {
+        "prefix": "closeBluetooth",
+        "body": [
+            "closeBluetooth()"
+        ],
+        "description": "关闭蓝牙"
+    },
+    "openWifi": {
+        "prefix": "openWifi",
+        "body": [
+            "openWifi()"
+        ],
+        "description": "打开wifi"
+    },
+    "closeWifi": {
+        "prefix": "closeWifi",
+        "body": [
+            "closeWifi()"
+        ],
+        "description": "关闭wifi"
+    },
+    "openWifiAp": {
+        "prefix": "openWifiAp",
+        "body": [
+            "openWifiAp()"
+        ],
+        "description": "打开热点"
+    },
+    "settings": {
+        "prefix": "settings",
+        "body": [
+            "settings = {",
+            "   $1",
+            "}",
+            "config = registerSettings($2,settings,1)"
+        ],
+        "description": "指令设置"
+    },
+    "closeWifiAp": {
+        "prefix": "closeWifiAp",
+        "body": [
+            "closeWifiAp()"
+        ],
+        "description": "关闭热点"
+    },
+    "isScreenOn": {
+        "prefix": "isScreenOn",
+        "body": [
+            "isScreenOn()"
+        ],
+        "description": "屏幕是否亮起"
+    },
+    "getClipText": {
+        "prefix": "getClipText",
+        "body": [
+            "getClipText()"
+        ],
+        "description": "获取剪切板内容"
+    },
+    "setClipText": {
+        "prefix": "setClipText",
+        "body": [
+            "setClipText($1)"
+        ],
+        "description": "设置剪切板内容"
+    },
+    "sendEmail": {
+        "prefix": "sendEmail",
+        "body": [
+            "sendEmail(#1,$2,$3)"
+        ],
+        "description": "sendEmail(to: String, subject: String? = null, content: String? = null)\n发送邮件 \nto : 收件人邮箱\nsubject : 标题\ncontent : 内容"
+    },
+    "location": {
+        "prefix": "location",
+        "body": [
+            "location()"
+        ],
+        "description": "获取用户地理位置,等待时长5s\n需授权\n获取失败返回空"
+    },
+    "SpHelper": {
+        "prefix": "SpHelper",
+        "body": [
+            "SpHelper()"
+        ],
+        "description": "存储"
+    },
+    "set": {
+        "prefix": "set",
+        "body": [
+            "set($1,$2)"
+        ],
+        "description": "sp存储设置key value"
+    },
+    "getInt": {
+        "prefix": "getInt",
+        "body": [
+            "getInt($1)"
+        ],
+        "description": "获取int值"
+    },
+    "getString": {
+        "prefix": "getString",
+        "body": [
+            "getString($1)"
+        ],
+        "description": "获取string值"
+    },
+    "getBoolean": {
+        "prefix": "getBoolean",
+        "body": [
+            "getBoolean($1)"
+        ],
+        "description": "获取boolean值"
+    },
+    "getStringSet": {
+        "prefix": "getStringSet",
+        "body": [
+            "getStringSet($1)"
+        ],
+        "description": "获取string set值"
+    },
+    "resetSettings": {
+        "prefix": "resetSettings",
+        "body": [
+            "resetSettings()"
+        ],
+        "description": "重置此条指令设置为默认"
+    },
+    "notifyFailed": {
+        "prefix": "notifyFailed",
+        "body": [
+            "notifyFailed($1)"
+        ],
+        "description": "失败通知"
+    },
+    "toPinyin": {
+        "prefix": "toPinyin",
+        "body": [
+            "toPinyin($1,$2)"
+        ],
+        "description": "toPinyin(text [,onlyFirstLetter])\n将text文本转换为中文拼音，onlyFirstLetter是否只需要首字母"
+    },
+    "matches": {
+        "prefix": "matches",
+        "body": [
+            "matches($1,$2)"
+        ],
+        "description": "matches(text,regexStr) \ntext: 待匹配字符串 regex:正则式字符串 ..%\n返回boolean 是否匹配成功"
+    },
+    "arr2String": {
+        "prefix": "arr2String",
+        "body": [
+            "arr2String($1)"
+        ],
+        "description": "将数组转为文本,返回转换结果，若arr空返回空"
+    },
+    "matchValues": {
+        "prefix": "matchValues",
+        "body": [
+            "matchValues($1，$2)"
+        ],
+        "description": "matchValues(text,regexStr) \ntext: 待匹配字符串 regex:正则式字符串 %为特殊,返回匹配到的字符串数组"
+    },
+    "startActivity": {
+        "prefix": "startActivity",
+        "body": [
+            "app.startActivity($1)"
+        ],
+        "description": "启动Activity"
+    },
+    "getPkgByWord": {
+        "prefix": "getPkgByWord",
+        "body": [
+            "getPkgByWord(${1:appName})"
+        ],
+        "description": "根据App名获取包名\n标记 -> 应用列表"
+    },
+    "accessibility": {
+        "prefix": "accessibility",
+        "body": [
+            "requireAccessibility()'"
+        ],
+        "description": "声明需要无障碍服务"
+    },
+    "raccessibility": {
+        "prefix": "requireAccessibility",
+        "body": [
+            "requireAccessibility()'"
+        ],
+        "description": "声明需要无障碍服务"
+    },
+    "debug": {
+        "prefix": "debug",
+        "body": [
+            "runtime.DEBUG"
+        ],
+        "description": "runtime.DEBUG"
+    },
+    "DEBUG": {
+        "prefix": "debug",
+        "body": [
+            "runtime.DEBUG"
+        ],
+        "description": "runtime.DEBUG"
+    },
+    "http": {
+        "prefix": "http",
+        "body": [
+            "http"
+        ],
+        "description": "网络请求"
+    },
+    "get": {
+        "prefix": "get",
+        "body": [
+            "get($1)"
+        ],
+        "description": "发起get请求，参数:(url [, params:Map])"
+    },
+    "post": {
+        "prefix": "post",
+        "body": [
+            "post($1)"
+        ],
+        "description": "发起post请求，参数:(url [, params:Map])"
+    },
+    "postJson": {
+        "prefix": "postJson",
+        "body": [
+            "postJson($1)"
+        ],
+        "description": "发起post请求, 参数:(url [, json:String)"
+    },
+    "getAsPc": {
+        "prefix": "getAsPc",
+        "body": [
+            "getAsPc($1)"
+        ],
+        "description": "模拟Pc发起get请求, 参数:(url [params:Map])"
+    },
+    "androRuntime": {
+        "prefix": "androRuntime",
+        "body": [
+            "androRuntime"
+        ],
+        "description": "安卓运行时|执行终端/root命令"
+    },
+    "exec": {
+        "prefix": "exec",
+        "body": [
+            "androRuntime.exec($1)"
+        ],
+        "description": "执行终端命令，返回结果String"
+    },
+    "isRoot": {
+        "prefix": "isRoot",
+        "body": [
+            "androRuntime.isRoot()"
+        ],
+        "description": "获取设备是否Root，返回Boolean"
+    },
+    "execWithSu": {
+        "prefix": "execWithSu",
+        "body": [
+            "androRuntime.execWithSu($1)"
+        ],
+        "description": ""
+    },
+    "parseDateText": {
+        "prefix": "parseDateText",
+        "body": [
+            "parseDateText($1)"
+        ],
+        "description": "解析中文时间, 返回Calendar\n支持示例：\"十二点\", \"八点四十五\", \"八点半\", \"晚上八点\", \"中午12点\", \"下午2点一刻\",\n\" \"明天中午\", \"后天下午3点\", \"大后天中午\", \"昨天下午2:21\", \"前天下午两点半\",\n\" \"周一下午\", \"下周二八点半\", \"周日晚上八点\",\n\" \"二十号晚上七点\", \"21号\", \"二十八号\", \"下个月十八号上午8点二十三\", \"十二月25号\",\n\" \"12月8号上午8点\", \"周二一点\", \"这周五八点\", \"周五晚上7点半\""
+    },
+    "createAlarm": {
+        "prefix": "createAlarm",
+        "body": [
+            "system.createAlarm()"
+        ],
+        "description": "创建闹钟\n1.创建一次性闹钟参数(hour: Int, minutes: Int)\"\n2.参数(message: String?, days: Array<Int>?, hour: Int, minutes: Int, noUi: Boolean)\n message:备注,days:重复周,hour:时,minutes:分,noUi:是否显示闹钟界面\n注:参数days 周日 - 周六 对应 1 - 7"
+    },
+    "screenOn": {
+        "prefix": "screenOn",
+        "body": [
+            "system.screenOn()"
+        ],
+        "description": "熄屏状态下,唤醒屏幕"
+    },
+    "screenOff": {
+        "prefix": "screenOff",
+        "body": [
+            "system.screenOff()"
+        ],
+        "description": "熄屏,需要root"
+    },
+    "sendKey": {
+        "prefix": "sendKey",
+        "body": [
+            "system.sendKey()"
+        ],
+        "description": "模拟按键,需要root,参数keyCode:Int\n0 -->  \"KEYCODE_UNKNOWN\"\"1 -->  \"KEYCODE_MENU\"\"2 -->  \"KEYCODE_SOFT_RIGHT\"\"3 -->  \"KEYCODE_HOME\"\"4 -->  \"KEYCODE_BACK\"\"5 -->  \"KEYCODE_CALL\" \"6 -->  \"KEYCODE_ENDCALL\" \"7 -->  \"KEYCODE_0\" \"8 -->  \"KEYCODE_1\" \"9 -->  \"KEYCODE_2\" \n10 -->  \"KEYCODE_3\"\n11 -->  \"KEYCODE_4\" \n12 -->  \"KEYCODE_5\" \n13 -->  \"KEYCODE_6\" \n14 -->  \"KEYCODE_7\" \n15 -->  \"KEYCODE_8\" \n16 -->  \"KEYCODE_9\" \n17 -->  \"KEYCODE_STAR\" \n18 -->  \"KEYCODE_POUND\" \n19 -->  \"KEYCODE_DPAD_UP\" \n20 -->  \"KEYCODE_DPAD_DOWN\" \n21 -->  \"KEYCODE_DPAD_LEFT\" \n22 -->  \"KEYCODE_DPAD_RIGHT\"\n23 -->  \"KEYCODE_DPAD_CENTER\"\n24 -->  \"KEYCODE_VOLUME_UP\" \n25 -->  \"KEYCODE_VOLUME_DOWN\" \n26 -->  \"KEYCODE_POWER\" \n27 -->  \"KEYCODE_CAMERA\" \n28 -->  \"KEYCODE_CLEAR\" \n29 -->  \"KEYCODE_A\" \n30 -->  \"KEYCODE_B\" \n31 -->  \"KEYCODE_C\" \n32 -->  \"KEYCODE_D\" \n33 -->  \"KEYCODE_E\" \n34 -->  \"KEYCODE_F\" \n35 -->  \"KEYCODE_G\" \n36 -->  \"KEYCODE_H\" \n37 -->  \"KEYCODE_I\" \n38 -->  \"KEYCODE_J\" \n39 -->  \"KEYCODE_K\" \n40 -->  \"KEYCODE_L\" \n41 -->  \"KEYCODE_M\"\n42 -->  \"KEYCODE_N\" \n43 -->  \"KEYCODE_O\" \n44 -->  \"KEYCODE_P\" \n45 -->  \"KEYCODE_Q\" \n46 -->  \"KEYCODE_R\" \n47 -->  \"KEYCODE_S\" \n48 -->  \"KEYCODE_T\" \n49 -->  \"KEYCODE_U\" \n50 -->  \"KEYCODE_V\" \n51 -->  \"KEYCODE_W\" \n52 -->  \"KEYCODE_X\"\n53 -->  \"KEYCODE_Y\" \n54 -->  \"KEYCODE_Z\" \n55 -->  \"KEYCODE_COMMA\" \n56 -->  \"KEYCODE_PERIOD\"\n57 -->  \"KEYCODE_ALT_LEFT\" \n58 -->  \"KEYCODE_ALT_RIGHT\" \n59 -->  \"KEYCODE_SHIFT_LEFT\" \n60 -->  \"KEYCODE_SHIFT_RIGHT\" \n61 -->  \"KEYCODE_TAB\" \n62 -->  \"KEYCODE_SPACE\" \n63 -->  \"KEYCODE_SYM\" \n64 -->  \"KEYCODE_EXPLORER\" \n65 -->  \"KEYCODE_ENVELOPE\" \n66 -->  \"KEYCODE_ENTER\" \n67 -->  \"KEYCODE_DEL\" \n68 -->  \"KEYCODE_GRAVE\" \n69 -->  \"KEYCODE_MINUS\" \n70 -->  \"KEYCODE_EQUALS\" \n71 -->  \"KEYCODE_LEFT_BRACKET\" \n72 -->  \"KEYCODE_RIGHT_BRACKET\" \n73 -->  \"KEYCODE_BACKSLASH\"\n74 -->  \"KEYCODE_SEMICOLON\" \n75 -->  \"KEYCODE_APOSTROPHE\"\n76 -->  \"KEYCODE_SLASH\" \n77 -->  \"KEYCODE_AT\" \n78 -->  \"KEYCODE_NUM\" \n79 -->  \"KEYCODE_HEADSETHOOK\" \n80 -->  \"KEYCODE_FOCUS\"\n81 -->  \"KEYCODE_PLUS\"\n82 -->  \"KEYCODE_MENU\"\n83 -->  \"KEYCODE_NOTIFICATION\"\n84 -->  \"KEYCODE_SEARCH\" \n85 -->  \"TAG_LAST_KEYCODE\"\n from https://blog.csdn.net/chen825919148/article/details/18732041"
+    },
+    "batteryLevel": {
+        "prefix": "batteryLevel",
+        "body": [
+            "system.batteryLevel"
+        ],
+        "description": "当前电量值 0-100"
+    },
+    "userInterrupt": {
+        "prefix": "userInterrupt",
+        "body": [
+            "runtime.userInterrupt"
+        ],
+        "description": "用户终止的标志\n此标志用于在脚本长时间循环操作"
+    },
+    "isCharging": {
+        "prefix": "isCharging",
+        "body": [
+            "system.isCharging()"
+        ],
+        "description": "返回当前是否在充电"
+    },
+    "globalClick": {
+        "prefix": "globalClick",
+        "body": [
+            "globalClick()"
+        ],
+        "description": "ViewNode函数\n使用全局click函数点击，一般用于点击H5页面上的控件\n需要7.0+"
+    },
+    "appendText": {
+        "prefix": "appendText",
+        "body": [
+            "appendText($1)"
+        ],
+        "description": "ViewNode函数\n追加文本，适用于纯文本输入框"
+    },
+    "focusView": {
+        "prefix": "focusView",
+        "body": [
+            "runtime.focusView"
+        ],
+        "description": "返回当前获得焦点的ViewNode，可能为空"
+    },
+    "getPhoneByName": {
+        "prefix": "getPhoneByName",
+        "body": [
+            "system.getPhoneByName($1,$2)"
+        ],
+        "description": "根据姓名查找手机号，搜索范围：标记数据、通讯录\n参数：(name: String)"
+    },
+    "getLaunchIntent": {
+        "prefix": "getLaunchIntent",
+        "body": [
+            "system.getLaunchIntent($1)"
+        ],
+        "description": "根据pkg(包名)获取App的启动Intent,类似桌面启动App\n参数：(pkg:String)"
+    },
+    "sendSMS": {
+        "prefix": "sendSMS",
+        "body": [
+            "system.sendSMS($1,$2)"
+        ],
+        "description": "发送短信\n参数：(phone: String, content: String)"
+    },
+    "containsDesc": {
+        "prefix": "containsDesc",
+        "body": [
+            "ViewFinder().containsDesc($1)"
+        ],
+        "description": "文本匹配模式：Desc包含文本,不区分大小写"
+    },
+    "simCount": {
+        "prefix": "simCount",
+        "body": [
+            "system.simCount"
+        ],
+        "description": "当前插卡数量"
+    },
+    "contacts": {
+        "prefix": "contacts",
+        "body": [
+            "system.contacts"
+        ],
+        "description": "获得联系人数组  元素：Pair(contactName,phone)\n 提示：Pair类 使用 pair.first和pair.second 获取 里面的值"
+    },
+    "saveMarkedContact": {
+        "prefix": "saveMarkedContact",
+        "body": [
+            "system.saveMarkedContact($1,$2,$3)"
+        ],
+        "description": "保存到标记联系人\n参数(name: String, regex: String, phone: String)"
+    },
+    "saveMarkedApp": {
+        "prefix": "saveMarkedApp",
+        "body": [
+            "system.saveMarkedApp($1,$2,$3)"
+        ],
+        "description": "保存到标记应用\n参数(name: String, regex: String, pkg: String)"
+    },
+    "iSendKey": {
+        "prefix": "sendKey",
+        "body": [
+            "input.sendKey()"
+        ],
+        "description": ""
+    },
+    "iInput": {
+        "prefix": "input",
+        "body": [
+            "input.input($1)"
+        ],
+        "description": "使用输入法输入文字"
+    },
+    "actionSearch": {
+        "prefix": "actionSearch",
+        "body": [
+            "input.actionSearch()"
+        ],
+        "description": "在编辑框发送IME_ACTION_SEARCH动作"
+    },
+    "actionGo": {
+        "prefix": "actionGo",
+        "body": [
+            "input.actionGo()"
+        ],
+        "description": "在编辑框发送IME_ACTION_GO动作"
+    },
+    "sendEnter": {
+        "prefix": "sendEnter",
+        "body": [
+            "input.sendEnter()"
+        ],
+        "description": "在编辑框发送回车"
+    },
+    "idelete": {
+        "prefix": "delete",
+        "body": [
+            "input.delete()"
+        ],
+        "description": "在编辑框执行删除操作"
+    },
+    "": {
+        "prefix": "",
+        "body": [
+            ""
+        ],
+        "description": ""
+    }
+}
